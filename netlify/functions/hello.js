@@ -8,7 +8,8 @@
 
 exports.handler = async event => {
     const subject = event.queryStringParameters.name || 'World'
-    console.error('This is an error');
+    console.log('This is a log line');
+    console.error('This is an error log line');
     return {
         statusCode: 200,
         body: `Hello ${subject}!`,
