@@ -10,6 +10,11 @@ exports.handler = async event => {
     const subject = event.queryStringParameters.name || 'World'
     console.log('This is a log line');
     console.error('This is an error log line');
+
+    if (event.queryStringParameters.die) {
+        throw new Error('forced to die :-(');
+    }
+    
     return {
         statusCode: 200,
         body: `Hello ${subject}!`,
